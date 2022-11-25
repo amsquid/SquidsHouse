@@ -2,31 +2,21 @@
 import discord
 
 from discord.ext import commands
+
 from room import Room
+from config import get_config, get_info
 
-# Get data from config.dat
-config = {}
-
-with open('./config.dat', 'r') as configFile:
-	data = configFile.read()
-
-	lines = data.split(' ')
-
-	for line in lines:
-		config_item = line.split('=')
-
-		key = str(config_item[0])
-		value = str(config_item[1].replace('\n', ''))
-		
-		config[key] = value
+# Get data
+config = get_config()
+info = get_info()
 
 # Variables
 token = config['token']
 
 rooms = []
 
-main_guild = 1041055949571498036
-notifications_channel = 1041056231986569306
+main_guild = info['main_guild']
+notifications_channel = info['notifications']
 
 default_room = None
 
