@@ -76,8 +76,7 @@ async def _gotoroom(interaction: discord.Interaction, room: str):
 	await author.add_roles(roomRole)
 
 	# Sending response
-	await interaction.response.send_message('Successfully went to room, ' + gotoRoom.roomName)
-
+	await interaction.response.send_message(author.display_name + ' has left the room')
 
 # Setting up rooms
 create_room('livingroom', 1041057800090038393)
