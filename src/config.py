@@ -4,6 +4,7 @@ def get_config():
 	with open('./config.dat', 'r') as configFile:
 		data = configFile.read()
 
+		data.strip()
 		lines = data.split('\n')
 
 		for line in lines:
