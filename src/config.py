@@ -23,6 +23,7 @@ def get_info():
 	with open('./info.dat', 'r') as infoFile:
 		data = infoFile.read()
 
+		data.strip()
 		lines = data.split('\n')
 
 		for line in lines:
